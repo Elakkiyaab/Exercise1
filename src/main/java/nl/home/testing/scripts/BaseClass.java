@@ -65,11 +65,7 @@ public class BaseClass {
         }
     }
 
-    public void getTestReport() {
-        ExtentReports extent = ExtentReports.get(BaseClass.class);
-        extent.init("C:\\Mukesh\\Report\\myreport.html", true);
-        extent.log();
-    }
+
     @AfterSuite
     public void tearDown() {
         driver.quit();

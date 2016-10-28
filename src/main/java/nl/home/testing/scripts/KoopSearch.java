@@ -54,10 +54,7 @@ public class KoopSearch extends BaseClass {
         homepage.clickHomeButton();
         waitUntillPageLoad();
     }
-    /**
-     * Test case to check the last searched criteria are also displayed on the quick search component after each successful search
-     * @throws Exception
-     */
+
 
 
 
@@ -73,7 +70,7 @@ public class KoopSearch extends BaseClass {
         return objArray;
     }
 
-    //Search using location, distance , min distance , max distance
+
 
 
 
