@@ -3,6 +3,7 @@ package nl.home.testing.scripts;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.*;
 import nl.home.testing.pageobjects.HomePage;
+import nl.home.testing.pageobjects.HuurPage;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -26,6 +27,7 @@ public class BaseClass {
     WebDriver driver;
     protected static final String FUNDA_NL = "http://www.funda.nl/";;
     HomePage homepage;
+    HuurPage huurpage;
 
     @BeforeSuite
     public void setup(){

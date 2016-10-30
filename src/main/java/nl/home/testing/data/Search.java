@@ -7,7 +7,7 @@ public class Search {
     private String distance;
     private String minPrice;
     private String totPrice;
-
+    private String pageTitle;
 
 
     public String getLocation() {
@@ -40,6 +40,15 @@ public class Search {
 
     public void setTotPrice(String totPrice) {
         this.totPrice = totPrice;
+    }
+
+    public void setPageTitle(String pageTitle) {
+        this.pageTitle = pageTitle;
+    }
+
+
+    public String getPageTitle() {
+        return  pageTitle;
     }
 
 

@@ -20,6 +20,7 @@ public class ExcelUtils {
     public static final int DISTANCE_CELL_INDEX = 1;
     public static final int MIN_PRICE_CELL_INDEX = 2;
     public static final int MAX_PRICE_CELL_INDEX = 3;
+    public static final int PAGE_TITLE_CELL_INDEX = 4;
     private static HSSFSheet excelWSheet;
     private static HSSFWorkbook excelWBook;
 
@@ -50,6 +51,7 @@ public class ExcelUtils {
        search.setDistance(row.getCell(DISTANCE_CELL_INDEX).getStringCellValue());
        search.setMinPrice(row.getCell(MIN_PRICE_CELL_INDEX).getStringCellValue());
        search.setTotPrice(row.getCell(MAX_PRICE_CELL_INDEX).getStringCellValue());
+       search.setPageTitle(row.getCell(PAGE_TITLE_CELL_INDEX).getStringCellValue());
        return search;
    }
 
