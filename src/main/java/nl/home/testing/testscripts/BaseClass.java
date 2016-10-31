@@ -1,9 +1,8 @@
-package nl.home.testing.scripts;
+package nl.home.testing.testscripts;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.*;
 import nl.home.testing.pageobjects.HomePage;
 import nl.home.testing.pageobjects.HuurPage;
+import nl.home.testing.pageobjects.RecreationPage;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -18,8 +17,6 @@ import org.testng.annotations.BeforeSuite;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-import org.testng.Assert;
-
 
 
 public class BaseClass {
@@ -28,8 +25,9 @@ public class BaseClass {
     protected static final String FUNDA_NL = "http://www.funda.nl/";;
     HomePage homepage;
     HuurPage huurpage;
+    RecreationPage recrepage;
 
-    @BeforeSuite
+    @BeforeSuite()
     public void setup(){
         System.setProperty("webdriver.chrome.driver", "D://Project//Exercise1//driver//chromedriver.exe");
         driver = new ChromeDriver();
@@ -68,7 +66,7 @@ public class BaseClass {
     }
 
 
-    @AfterSuite
+    @AfterSuite()
     public void tearDown() {
         driver.quit();
     }

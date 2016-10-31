@@ -1,4 +1,4 @@
-package nl.home.testing.scripts;
+package nl.home.testing.testscripts;
 
 
 import nl.home.testing.data.Search;
@@ -7,7 +7,6 @@ import nl.home.testing.pageobjects.HomePage;
 import nl.home.testing.pageobjects.HuurPage;
 import nl.home.testing.utils.ExcelUtils;
 import org.apache.commons.logging.Log;
-import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -17,10 +16,10 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 
-public class HuurSearch extends BaseClass {
+
+public class HuurSearchTest extends BaseClass {
 
     String screenShotPath="D:/Project/Exercise1/src/main/resources/screenshots/huursearch_test/TestResults_";
     String expectedPageTitle,actualPageTitle;
@@ -52,10 +51,10 @@ public class HuurSearch extends BaseClass {
         huurpage.clickSearch();
         Log.info("Navigated to huur page");
         expectedPageTitle=search.getPageTitle();
-        actualPageTitle=huurpage.getPageTitle();
+        actualPageTitle=homepage.getNewPageTitle();
+        System.out.println(expectedPageTitle);
         captureScreenShot(screenShotPath);
-        huurpage.getPageTitle();
-        Assert.assertEquals(expectedPageTitle,actualPageTitle);
+       assertEquals(actualPageTitle,expectedPageTitle);
         homepage.clickHomeButton();
         Reporter.log("Test case passed");
 
@@ -67,12 +66,7 @@ public class HuurSearch extends BaseClass {
     @DataProvider(name = "huurSearch")
     public Object[][] Authentication() throws Exception {
         List<Search> searches = ExcelUtils.getSearchOptions("D://Project//Exercise1//src//main//resources//TestData//DataProvider.xls","Huur_Search");
-        Object [][] objArray = new Object[searches.size()][];
-        int index =0;
-        for(Search data:searches) {
-            objArray[index] = new Object[1];
-            objArray[index++][0] = data;
-        }
+        Object[][] objArray = ExcelUtils.getOptions(searches);
         return objArray;
-    }
+}
 }

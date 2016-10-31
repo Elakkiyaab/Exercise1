@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 public class HomePage {
 
     WebDriver driver;
-    String SearchValue,locationValue;
+    String SearchValue,locationValue,actualTitle;
     By login = By.linkText("Inloggen");
 
     By registration = By.linkText("Registreren");
@@ -117,5 +117,12 @@ public class HomePage {
 
     public void clickHomeButton() {
         driver.findElement(HOME_BUTTON).click();
+    }
+
+    public String getNewPageTitle()
+    {
+        actualTitle=driver.getTitle();
+        return actualTitle;
+
     }
 }

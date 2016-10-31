@@ -3,11 +3,11 @@ package nl.home.testing.data;
 
 public class Search {
 
-    private String location;
-    private String distance;
-    private String minPrice;
-    private String totPrice;
-    private String pageTitle;
+    private String location=null;
+    private String distance=null;;
+    private String minPrice=null;;
+    private String totPrice=null;;
+    private String pageTitle=null;
 
 
     public String getLocation() {

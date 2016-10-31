@@ -1,22 +1,26 @@
 package nl.home.testing.pageobjects;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class HuurPage {
+
+public class RecreationPage {
     WebDriver driver;
     String actualTitle;
-    By PLACE_LOCATOR = By.id("autocomplete-input");
-    By RANGE_SELECTOR = By.id("Afstand");
-    By MIN_PRICE_SELECTOR = By.id("range-filter-selector-select-filter_fundahuurprijsvan");
-    By MAX_PRICE_SELECTOR = By.id("range-filter-selector-select-filter_fundahuurprijstot");
-    By SEARCH_BUTTON = By.xpath("//button[@type='submit']");
+    By PLACE_LOCATOR = By.id("search-place-postalcode");
+    By RANGE_SELECTOR = By.id("Range");
+    By MIN_PRICE_SELECTOR = By.id("SaleFrom");
+    By MAX_PRICE_SELECTOR = By.id("SaleTo");
+    By SEARCH_BUTTON = By.xpath("//input[@value='Zoeken']");
+    By KOOP_LNK = By.id("toggleSale");
+    By HUUR_LNK = By.id("toggleRent");
+    By BOTH_LNK = By.xpath("//*[@id='toggleBoth']");
 
 
 
-    public HuurPage(WebDriver driver) {
+
+    public RecreationPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -43,7 +47,14 @@ public class HuurPage {
         driver.findElement(SEARCH_BUTTON).click();
     }
 
-
-
+    public void clickKoopLnk() {
+        driver.findElement(KOOP_LNK).click();
+    }
+    public void clickHuurLnk() {
+        driver.findElement(HUUR_LNK).click();
+    }
+    public void clickBothLnk() {
+        driver.findElement(BOTH_LNK).click();
+    }
 
 }

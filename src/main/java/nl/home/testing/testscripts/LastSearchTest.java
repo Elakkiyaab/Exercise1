@@ -1,18 +1,14 @@
-package nl.home.testing.scripts;
+package nl.home.testing.testscripts;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import nl.home.testing.pageobjects.HomePage;
 
-import java.io.File;
 
+public class LastSearchTest extends BaseClass {
 
-public class LastSearch extends BaseClass {
-
-    String expectedValue;
+    String expectedValue,actualValue;
     String screenShotPath="D:/Project/Exercise1/src/main/resources/screenshots/lastSearch_test/TestResults_";
     @BeforeTest
     public void openUrl() {
@@ -31,13 +27,8 @@ public class LastSearch extends BaseClass {
         homepage.clickHomeButton();
         waitUntillPageLoad();
         captureScreenShot(screenShotPath);
-
-        if(homepage.getLastSearchText().contentEquals(expectedValue))
-        {
-            System.out.println("content matches");
-
-        } else
-            System.out.print("content doesn't matches");
+        actualValue=homepage.getLastSearchText();
+        Assert.assertEquals(actualValue,expectedValue);
 
     }
 }

@@ -1,4 +1,4 @@
-package nl.home.testing.scripts;
+package nl.home.testing.testscripts;
 
 
 import nl.home.testing.data.Search;
@@ -8,18 +8,17 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.util.List;
 
 
-public class KoopSearch extends BaseClass {
+public class KoopSearchTest extends BaseClass {
 
     public static final String SEARCH_PARAMETERS = "searchParameters";
     String screenShotPath="D:/Project/Exercise1/src/main/resources/screenshots/koopsearch_test/TestResults_";
     String expectedValue;
 
 
-    @BeforeTest
+    @BeforeTest(alwaysRun=true)
     public void openUrl() {
         driver.get(FUNDA_NL);
         homepage = new HomePage(driver);
@@ -52,19 +51,11 @@ public class KoopSearch extends BaseClass {
 
     @DataProvider(name = SEARCH_PARAMETERS)
     public Object[][] Authentication() throws Exception {
-          List<Search> searches = ExcelUtils.getSearchOptions("D://Project//Exercise1//src//main//resources//TestData//DataProvider.xls","Search");
-        Object [][] objArray = new Object[searches.size()][];
-        int index =0;
-        for(Search data:searches) {
-            objArray[index] = new Object[1];
-            objArray[index++][0] = data;
-        }
+          List<Search> searches = ExcelUtils.getSearchOptions("D://Project//Exercise1//src//main//resources//TestData//DataProvider.xls","Koop_Search");
+        Object[][] objArray = ExcelUtils.getOptions(searches);
         return objArray;
+
     }
-
-
-
-
 
 
 }

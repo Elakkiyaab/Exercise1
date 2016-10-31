@@ -1,18 +1,13 @@
 package nl.home.testing.utils;
 
 import com.beust.jcommander.internal.Lists;
-import com.google.common.base.Splitter;
 import nl.home.testing.data.Search;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Row;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 
 public class ExcelUtils {
@@ -51,8 +46,20 @@ public class ExcelUtils {
        search.setDistance(row.getCell(DISTANCE_CELL_INDEX).getStringCellValue());
        search.setMinPrice(row.getCell(MIN_PRICE_CELL_INDEX).getStringCellValue());
        search.setTotPrice(row.getCell(MAX_PRICE_CELL_INDEX).getStringCellValue());
-       search.setPageTitle(row.getCell(PAGE_TITLE_CELL_INDEX).getStringCellValue());
+      search.setPageTitle(row.getCell(PAGE_TITLE_CELL_INDEX).getStringCellValue());
        return search;
    }
+    public static Object[][] getOptions(List<Search> searches)
+    {
+        Object [][] objArray = new Object[searches.size()][];
+        int index =0;
+        for(Search data:searches) {
+            objArray[index] = new Object[1];
+            objArray[index++][0] = data;
+        }
+        return objArray;
+    }
+
+
 
 }

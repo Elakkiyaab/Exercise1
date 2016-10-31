@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+    <test name="Search in Koop Tab">
+
+        <classes>
+            <class name="nl.home.testing.testscripts.KoopSearchTest" />
+
+        </classes>
+    </test>
+    <test name="Last Search">
+
+    <classes>
+            <class name="nl.home.testing.testscripts.LastSearchTest" />
+</classes>
+</test>
+    <test name="Search in Huur Tab">
+
+        <classes>
+            <class name="nl.home.testing.testscripts.HuurSearchTest" />
+        </classes>
+    </test>
+   </suite>
