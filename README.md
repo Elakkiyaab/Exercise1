@@ -36,5 +36,5 @@ Execution:
 *	Clone the repository.
 *   open the project in intellig or eclipse
 *   execute maven validate command
-*   Run testng.xml file to run the test
+*   Run testng.xml file to run the test or execute each class under testscripts package
 
