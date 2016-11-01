@@ -14,11 +14,6 @@
     <classes>
             <class name="nl.home.testing.testscripts.LastSearchTest" />
 </classes>
-</test>
-    <test name="Search in Huur Tab">
-
-        <classes>
-            <class name="nl.home.testing.testscripts.HuurSearchTest" />
-        </classes>
     </test>
+
    </suite>

@@ -1,4 +1,4 @@
-package nl.home.testing.data;
+package nl.home.testing.properties;
 
 
 public class Search {

@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import nl.home.testing.pageobjects.HomePage;
 
 
+
+//This class is used to check last searched string in home page
 public class LastSearchTest extends BaseClass {
 
     String expectedValue,actualValue;

@@ -1,7 +1,7 @@
 package nl.home.testing.utils;
 
 import com.beust.jcommander.internal.Lists;
-import nl.home.testing.data.Search;
+import nl.home.testing.properties.Search;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;

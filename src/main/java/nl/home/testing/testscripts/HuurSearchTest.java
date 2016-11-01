@@ -1,7 +1,7 @@
 package nl.home.testing.testscripts;
 
 
-import nl.home.testing.data.Search;
+import nl.home.testing.properties.Search;
 
 import nl.home.testing.pageobjects.HomePage;
 import nl.home.testing.pageobjects.HuurPage;
@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 import static org.testng.Assert.assertEquals;
 
-
+//This class is used to test quick search using Huur properties in home page
 
 public class HuurSearchTest extends BaseClass {
 

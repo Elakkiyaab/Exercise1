@@ -1,17 +1,18 @@
 package nl.home.testing.testscripts;
 
 
-import nl.home.testing.data.Search;
+import nl.home.testing.properties.Search;
 import nl.home.testing.pageobjects.HomePage;
 ;
 import nl.home.testing.pageobjects.RecreationPage;
 import nl.home.testing.utils.ExcelUtils;
-import org.openqa.selenium.By;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.List;
+
+//This class is used to test quick search using Recreatie properties in home page
 
 public class RecreatieSearchTest extends BaseClass {
 
